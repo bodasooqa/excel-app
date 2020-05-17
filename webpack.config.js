@@ -13,7 +13,10 @@ const filename = ext => isDev ? `bundle.${ext}` : `bundle.[hash].${ext}`;
 const jsLoaders = () => {
   const loaders = [
     {
-      loader: 'babel-loader'
+      loader: 'babel-loader',
+      options: {
+        plugins: ['@babel/plugin-proposal-class-properties']
+      }
     }
   ];
 
@@ -56,7 +59,7 @@ module.exports = {
     new CopyPlugin({
       patterns: [
         {
-          from: path.resolve(__dirname, 'src/favicon.ico'),
+          from: path.resolve(__dirname, 'src/favicon.png'),
           to: path.resolve(__dirname, 'dist')
         }
       ]
