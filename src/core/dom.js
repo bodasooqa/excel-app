@@ -56,12 +56,12 @@ class Dom {
     return this.$el.querySelectorAll(selector);
   }
 
-  setWidth(value) {
-    this.$el.style.width = value + 'px';
-  }
-
-  setHeight(value) {
-    this.$el.style.height = value + 'px';
+  css(style = {}) {
+    for (const key in style) {
+      if (Object.prototype.hasOwnProperty.call(style, key)) {
+        this.$el.style[key] = style[key];
+      }
+    }
   }
 }
 

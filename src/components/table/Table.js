@@ -29,15 +29,15 @@ export class Table extends ExcelComponent {
       document.onmousemove = e => {
         if (type === 'col') {
           const delta = e.pageX - coords.right;
-          const value = coords.width + delta;
-          $parent.setWidth(value);
+          const value = coords.width + delta + 'px';
+          $parent.css({ width: value });
           cells.forEach(item => {
-            $(item).setWidth(value);
+            $(item).css({ width: value });
           })
         } else {
           const delta = e.pageY - coords.bottom;
-          const value = coords.height + delta;
-          $parent.setHeight(value);
+          const value = coords.height + delta + 'px';
+          $parent.css({ height: value });
         }
       };
 
