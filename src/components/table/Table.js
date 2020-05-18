@@ -6,7 +6,8 @@ export class Table extends ExcelComponent {
 
   constructor($root) {
     super($root, {
-      name: 'Table'
+      name: 'Table',
+      // listeners: ['click', 'mousedown', 'mousemove', 'mouseup']
     });
   }
 
