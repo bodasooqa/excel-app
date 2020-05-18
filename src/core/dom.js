@@ -56,12 +56,10 @@ class Dom {
     return this.$el.querySelectorAll(selector);
   }
 
-  css(style = {}) {
-    for (const key in style) {
-      if (Object.prototype.hasOwnProperty.call(style, key)) {
-        this.$el.style[key] = style[key];
-      }
-    }
+  css(styles = {}) {
+    Object.keys(styles).forEach(key => {
+      this.$el.style[key] = styles[key];
+    })
   }
 }
 
