@@ -55,6 +55,14 @@ class Dom {
   getAll(selector) {
     return this.$el.querySelectorAll(selector);
   }
+
+  setWidth(value) {
+    this.$el.style.width = value + 'px';
+  }
+
+  setHeight(value) {
+    this.$el.style.height = value + 'px';
+  }
 }
 
 export function $(selector) {

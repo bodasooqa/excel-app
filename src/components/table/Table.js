@@ -24,20 +24,20 @@ export class Table extends ExcelComponent {
       const $resizer = $(event.target);
       const $parent = $resizer.closest('[data-type="resizable"]');
       const coords = $parent.getCoords();
-      const id = $parent.data.col;
-      const cells = this.$root.getAll(`[data-col="${id}"]`);
+      const cells = this.$root.getAll(`[data-col="${$parent.data.col}"]`);
 
       document.onmousemove = e => {
-        $resizer.$el.focus();
-        const delta = e[type === 'col' ? 'pageX' : 'pageY'] -
-          coords[type === 'col' ? 'right' : 'bottom'];
-        const value = coords[type === 'col' ? 'width' : 'height'] + delta;
-        $parent.$el.style[type === 'col' ? 'width' : 'height'] = value + 'px';
-
         if (type === 'col') {
+          const delta = e.pageX - coords.right;
+          const value = coords.width + delta;
+          $parent.setWidth(value);
           cells.forEach(item => {
-            item.style.width = value + 'px';
+            $(item).setWidth(value);
           })
+        } else {
+          const delta = e.pageY - coords.bottom;
+          const value = coords.height + delta;
+          $parent.setHeight(value);
         }
       };
 
