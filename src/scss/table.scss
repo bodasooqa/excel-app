@@ -49,11 +49,11 @@
     position: absolute;
     background: $primary;
     opacity: 0;
-    z-index: 2;
+    z-index: 1000;
     transition: all .1s;
 
     &:hover {
-      opacity: 1;
+      opacity: 1 !important;
     }
   }
 
