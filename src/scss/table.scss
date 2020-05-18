@@ -12,7 +12,7 @@
   .row {
     display: flex;
     flex-direction: row;
-    max-height: 20px;
+    min-height: 20px;
     height: $row-height;
 
     &-info {
