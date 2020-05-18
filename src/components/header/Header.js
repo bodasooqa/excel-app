@@ -1,4 +1,5 @@
 import { ExcelComponent } from '@core/ExcelComponent';
+const logo = require('../../logo.svg');
 
 export class Header extends ExcelComponent {
   static className = 'excel__header';
@@ -11,7 +12,10 @@ export class Header extends ExcelComponent {
 
   toHTML() {
     return `
-      <input type="text" class="input" value="New table">
+      <div class="logo-area">
+        ${logo}
+        <input type="text" class="input" value="New table">
+      </div>
 
       <div>
 
