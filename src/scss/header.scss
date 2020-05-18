@@ -7,14 +7,25 @@
   right: 0;
   left: 0;
   height: $header-height;
-  padding: 8px 4px 0;
+  padding: 4px;
   display: flex;
   justify-content: space-between;
+  align-items: center;
+
+  .logo-area {
+    display: flex;
+    align-items: center;
+
+    svg {
+      height: 28px;
+      margin: 0 5px;
+    }
+  }
 
   .input {
     min-width: 1px;
     margin: 0;
-    padding: 2px 7px;
+    padding: 2px 5px;
     color: #000;
     border: 1px solid transparent;
     border-radius: 2px;
@@ -34,6 +45,6 @@
   }
 
   .button {
-    @include button(green);
+    @include button($main);
   }
 }

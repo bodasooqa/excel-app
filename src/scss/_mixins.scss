@@ -1,4 +1,6 @@
-@mixin button($color: green) {
+@import "variables";
+
+@mixin button($color: $main) {
   height: 24px;
   min-width: 24px;
   text-align: center;
@@ -6,6 +8,7 @@
   display: inline-block;
   padding: 3px;
   color: rgba(0, 0, 0, .75);
+  border-radius: 2px;
   transition: all .3s;
 
   > i {
